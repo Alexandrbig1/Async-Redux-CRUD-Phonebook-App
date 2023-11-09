@@ -1,19 +1,19 @@
 import { useDispatch, useSelector } from "react-redux";
+// import { setFilter } from "../../redux/operations";
+import { selectFiltersContacts } from "../../redux/selectors";
 import {
   FilterDiv,
   FilterInput,
   FilterLabel,
   FilterSearchIcon,
 } from "./Filter.styled";
-import { setFilter } from "../../redux/contactSlice";
-import { getFiltersContacts } from "../../redux/selectors";
 
 export default function Filter() {
   const dispatch = useDispatch();
-  const filteredContacts = useSelector(getFiltersContacts);
+  const filteredContacts = useSelector(selectFiltersContacts);
   function changeFilter(e) {
     const searchContact = e.toLowerCase();
-    dispatch(setFilter(searchContact));
+    // dispatch(setFilter(searchContact));
   }
 
   return (

@@ -6,7 +6,7 @@ import ThemeButton from "./ThemeButton/ThemeButton";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
 import { useSelector } from "react-redux";
-import { getContacts } from "../redux/selectors";
+import { selectContacts } from "../redux/selectors";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
@@ -57,7 +57,7 @@ const theme = {
 };
 
 export default function App() {
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
   const [isOpen, setIsOpen] = useState(contacts.length === 0 ? false : true);
   const [isDarkTheme, setIsDarkTheme] = useState(
     contacts.length === 0 ? false : true

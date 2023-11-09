@@ -4,8 +4,8 @@ import * as Yup from "yup";
 import { nanoid } from "nanoid";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
-import { addContact } from "../../redux/contactSlice";
-import { getContacts } from "../../redux/selectors";
+import { addContact } from "../../redux/operations";
+import { selectContacts } from "../../redux/selectors";
 import {
   FormContactBtn,
   FormLabel,
@@ -19,7 +19,7 @@ import {
 
 export default function FormSubmit() {
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
 
   const [contact, setContact] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
