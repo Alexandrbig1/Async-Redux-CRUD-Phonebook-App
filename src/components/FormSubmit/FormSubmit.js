@@ -36,7 +36,7 @@ export default function FormSubmit() {
     );
 
     if (contactExist) {
-      toast(`${newValue.contact} is already in contacts.`, {
+      toast.info(`${newValue.contact} is already in contacts.`, {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -47,6 +47,16 @@ export default function FormSubmit() {
         theme: "light",
       });
     } else {
+      toast.success(`${newValue.contact} added to your contacts.`, {
+        position: "top-right",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: "light",
+      });
       dispatch(addContact(newValue));
     }
 
@@ -58,7 +68,7 @@ export default function FormSubmit() {
     contact: Yup.string()
       .min(1, "Too Short Name!")
       .max(50, "Too Long Name!")
-      .required("Please write a name"),
+      .required("Please write a name!"),
     phoneNumber: Yup.string()
       .min(9, "Invalid Phone Number")
       .required("Please fill up the phone number!"),

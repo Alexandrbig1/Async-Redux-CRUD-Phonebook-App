@@ -16,7 +16,9 @@ export const FormField = styled(Field)`
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  color: #111;
+  color: ${(p) => p.theme.colors.textColor};
+  background-color: ${(p) => p.theme.colors.inputBg};
+  font-size: 1.4rem;
 
   &:hover {
     box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1);
@@ -30,8 +32,8 @@ export const FormField = styled(Field)`
   &::placeholder {
     overflow: hidden;
     color: #777;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 12px;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.4rem;
     font-weight: 400;
     line-height: 1.4;
   }
@@ -49,6 +51,7 @@ export const FormHiUser = styled(HiUser)`
   position: absolute;
   top: 50%;
   left: 0.6rem;
+  color: ${(p) => p.theme.colors.textColor};
 
   transform: translateY(-50%);
 `;
@@ -56,6 +59,8 @@ export const FormHiPhone = styled(HiPhone)`
   position: absolute;
   top: 50%;
   left: 0.6rem;
+  color: ${(p) => p.theme.colors.textColor};
+
   transform: translateY(-50%);
 `;
 
@@ -65,7 +70,7 @@ export const FormError = styled(ErrorMessage)`
 
 export const FormLabel = styled.label`
   color: ${(p) => p.theme.colors.textColor};
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -73,7 +78,8 @@ export const FormLabel = styled.label`
 `;
 
 export const FormContactBtn = styled.button`
-  margin-top: 12px;
+  margin-top: 0.4rem;
+  margin-bottom: 0.4rem;
   border: none;
   outline: none;
   padding: 8px 20px;
@@ -82,7 +88,7 @@ export const FormContactBtn = styled.button`
   background-color: ${(p) => p.theme.colors.contactBtn};
   transition: 0.3s;
   color: ${(p) => p.theme.colors.textColor};
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 12px;
   font-style: normal;
   font-weight: 500;

@@ -23,7 +23,7 @@ export const P = styled.p`
   align-items: center;
   justify-content: center;
   color: ${(p) => p.theme.colors.textColor};
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;

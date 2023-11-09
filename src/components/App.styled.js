@@ -4,13 +4,13 @@ export const AppDiv = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 4px;
+  gap: 1.2rem;
   width: 300px;
 `;
 
 export const AppTitleH1 = styled.h1`
   color: ${(p) => p.theme.colors.textColor};
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 36px;
   font-weight: 600;
   line-height: 120%;
@@ -18,7 +18,7 @@ export const AppTitleH1 = styled.h1`
 `;
 export const AppTitleH2 = styled.h1`
   color: ${(p) => p.theme.colors.textColor};
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 36px;
   font-weight: 600;
   line-height: 120%;
@@ -40,7 +40,8 @@ export const AppContainer = styled.div`
   align-items: center;
   gap: 24px;
   width: 800px;
-  height: 600px;
+  min-height: 660px;
+  /* padding: 2.4rem; */
   background-color: ${(p) => p.theme.colors.containerColor};
   box-shadow: 15px 15px 50px 40px ${(p) => p.theme.colors.boxShadow},
     -15px -15px 50px 40px ${(p) => p.theme.colors.boxShadow};

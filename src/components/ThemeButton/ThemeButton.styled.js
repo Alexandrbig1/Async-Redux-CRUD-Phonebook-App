@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { GiPowerButton } from "react-icons/gi";
+import { TbSunHigh, TbMoon } from "react-icons/tb";
 
 export const SwitcherTheme = styled.button`
   border: none;
@@ -15,12 +15,25 @@ export const SwitcherTheme = styled.button`
   transition: 0.3s;
 `;
 
-export const IconClick = styled(GiPowerButton)`
+export const IconClickLight = styled(TbSunHigh)`
   color: ${(p) => p.theme.colors.textColor};
-  font-size: 24px;
+  font-size: 3.6rem;
   transition: 0.3s;
+  padding: 0.6rem;
+  border-radius: 50%;
 
   &:hover {
-    color: ${(p) => p.theme.colors.deleteBtn};
+    background-color: ${(p) => p.theme.colors.switcherBg};
+  }
+`;
+export const IconClickDark = styled(TbMoon)`
+  color: ${(p) => p.theme.colors.textColor};
+  font-size: 3.6rem;
+  transition: 0.3s;
+  padding: 0.6rem;
+  border-radius: 50%;
+
+  &:hover {
+    background-color: ${(p) => p.theme.colors.switcherBg};
   }
 `;

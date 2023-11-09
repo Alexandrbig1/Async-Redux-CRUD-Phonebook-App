@@ -35,6 +35,8 @@ const theme = {
       itemsEven: "#f8f9fa",
       itemsOdd: "#dee2e6",
       boxShadow: "rgba(255, 255, 255, 0.5)",
+      switcherBg: "#ced4da",
+      inputBg: "#f8f9fa",
     },
   },
   dark: {
@@ -48,6 +50,8 @@ const theme = {
       itemsEven: "#212529",
       itemsOdd: "#343a40",
       boxShadow: "none",
+      switcherBg: "#1E1E1E",
+      inputBg: "#050505",
     },
   },
 };
@@ -67,7 +71,7 @@ export default function App() {
     <ThemeProvider theme={isDarkTheme ? theme.dark : theme.light}>
       <GlobalStyle />
       <AppContainer>
-        <ThemeButton toggleTheme={toggleTheme} />
+        <ThemeButton toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
         <AppWrapper open={isOpen}>
           <AppButton onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <AppButtonClose /> : <AppButtonOpen />}

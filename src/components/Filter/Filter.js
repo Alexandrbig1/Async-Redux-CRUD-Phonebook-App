@@ -1,5 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
-import { FilterDiv, FilterInput, FilterLabel } from "./Filter.styled";
+import {
+  FilterDiv,
+  FilterInput,
+  FilterLabel,
+  FilterSearchIcon,
+} from "./Filter.styled";
 import { setFilter } from "../../redux/contactSlice";
 import { getFiltersContacts } from "../../redux/selectors";
 
@@ -13,16 +18,21 @@ export default function Filter() {
 
   return (
     <FilterDiv>
-      <FilterLabel htmlFor="search">Find contacts by name:</FilterLabel>
-      <FilterInput
-        type="text"
-        name="search"
-        value={filteredContacts}
-        placeholder="John Doe"
-        onChange={(e) => {
-          changeFilter(e.target.value);
-        }}
-      />
+      <FilterLabel htmlFor="search">
+        Find contacts by name:
+        {/* <FilterInputWrapper> */}
+        <FilterInput
+          type="text"
+          name="search"
+          value={filteredContacts}
+          placeholder="Search"
+          onChange={(e) => {
+            changeFilter(e.target.value);
+          }}
+        />
+        <FilterSearchIcon />
+      </FilterLabel>
+      {/* </FilterInputWrapper> */}
     </FilterDiv>
   );
 }

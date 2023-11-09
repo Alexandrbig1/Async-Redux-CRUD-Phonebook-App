@@ -1,12 +1,16 @@
-import { IconClick, SwitcherTheme } from "./ThemeButton.styled";
+import {
+  IconClickLight,
+  IconClickDark,
+  SwitcherTheme,
+} from "./ThemeButton.styled";
 
-export default function ThemeButton({ toggleTheme }) {
+export default function ThemeButton({ toggleTheme, isDarkTheme }) {
   const handleThemeToggle = () => {
     toggleTheme();
   };
   return (
     <SwitcherTheme onClick={handleThemeToggle}>
-      <IconClick />
+      {isDarkTheme ? <IconClickDark /> : <IconClickLight />}
     </SwitcherTheme>
   );
 }
