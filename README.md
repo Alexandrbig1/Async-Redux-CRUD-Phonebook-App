@@ -1,13 +1,25 @@
 # **Phonebook** with Redux and Redux API
 <img align="right" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="100"/>
 
+# Async Redux CRUD App
+
 ## Description
 
-doing homework while studying in bootcamp @GoIT on Fullstack developer course
+The Async Redux CRUD App is a React application that showcases asynchronous data management using Redux Toolkit's `createAsyncThunk`, Axios for API calls, and CRUD operations (Create, Read, Update, Delete) with mockapi.io as the backend service. This project is designed to help you understand how to integrate Redux Toolkit with asynchronous actions and a remote API.
 
-## Project Specifications:
+## Key Features and Technologies Used:
 
-React module(Redux/ReduxToolkit/hooks/states/localStorage/derivedStates/events/props/forms/libraries/Formik/Yup/ReactIcons/modernNormalize/styledComponents/nanoid)
+- View a list of contacts from the API
+- Add new contacts
+- Delete contacts
+- Filtering existing contacts
+- Asynchronous data fetching and updating
+- Axios for making API requests
+- Data provided by mockapi.io
+- Data persistence with Redux Toolkit
+- State management with Redux Toolkit
+- React
+- Styling by Styled Components
 
 ## Languages and Tools:
 <div align="center">  
