@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Filter from "./Filter/Filter";
 import FormSubmit from "./FormSubmit/FormSubmit";
 import ContactsList from "./ContactsList/ContactsList";
 import ThemeButton from "./ThemeButton/ThemeButton";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { selectContacts } from "../redux/selectors";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -22,6 +22,7 @@ import {
   AppButtonOpen,
   AppButtonClose,
 } from "./AppButton/AppButton";
+import { fetchContacts } from "../redux/operations";
 
 const theme = {
   light: {
@@ -57,7 +58,19 @@ const theme = {
 };
 
 export default function App() {
+  const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
+
+  useEffect(() => {
+    // Dispatch fetchContacts thunk
+    dispatch(fetchContacts())
+      .unwrap()
+      .catch((error) => {
+        console.error("Error fetching contacts:", error);
+      });
+  });
+
+  // const contacts = useSelector(selectContacts);
   const [isOpen, setIsOpen] = useState(contacts.length === 0 ? false : true);
   const [isDarkTheme, setIsDarkTheme] = useState(
     contacts.length === 0 ? false : true
