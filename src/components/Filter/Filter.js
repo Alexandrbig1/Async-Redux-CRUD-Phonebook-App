@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-// import { setFilter } from "../../redux/operations";
+import { setFilter } from "../../redux/contactSlice";
 import { selectFiltersContacts } from "../../redux/selectors";
 import {
   FilterDiv,
@@ -13,7 +13,7 @@ export default function Filter() {
   const filteredContacts = useSelector(selectFiltersContacts);
   function changeFilter(e) {
     const searchContact = e.toLowerCase();
-    // dispatch(setFilter(searchContact));
+    dispatch(setFilter(searchContact));
   }
 
   return (

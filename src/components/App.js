@@ -6,7 +6,7 @@ import ThemeButton from "./ThemeButton/ThemeButton";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
 import { useDispatch, useSelector } from "react-redux";
-import { selectContacts } from "../redux/selectors";
+import { selectContacts, selectIsLoading } from "../redux/selectors";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
@@ -23,6 +23,7 @@ import {
   AppButtonClose,
 } from "./AppButton/AppButton";
 import { fetchContacts } from "../redux/operations";
+// import Loader from "./Loader/Loader";
 
 const theme = {
   light: {
@@ -60,21 +61,45 @@ const theme = {
 export default function App() {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
-
-  useEffect(() => {
-    // Dispatch fetchContacts thunk
-    dispatch(fetchContacts())
-      .unwrap()
-      .catch((error) => {
-        console.error("Error fetching contacts:", error);
-      });
-  });
-
-  // const contacts = useSelector(selectContacts);
-  const [isOpen, setIsOpen] = useState(contacts.length === 0 ? false : true);
+  const [isOpen, setIsOpen] = useState(false);
+  // const isLoading = useSelector(selectIsLoading);
   const [isDarkTheme, setIsDarkTheme] = useState(
     contacts.length === 0 ? false : true
   );
+
+  useEffect(() => {
+    // Dispatch fetchContacts thunk
+    try {
+      dispatch(fetchContacts())
+        .unwrap()
+        .catch((error) => {
+          console.error("Error fetching contacts:", error);
+        });
+    } catch (error) {}
+  }, [dispatch]);
+
+  useEffect(() => {
+    // Set isOpen once the data is available
+    setIsOpen(contacts.length > 0);
+  }, [contacts]);
+
+  // useEffect(() => {
+  //   // Dispatch fetchContacts thunk
+
+  //   try {
+  //     dispatch(fetchContacts())
+  //       .unwrap()
+  //       .catch((error) => {
+  //         console.error("Error fetching contacts:", error);
+  //       });
+  //   } catch (error) {
+  //   } finally {
+  //     setIsOpen(contacts.length > 0 ? true : false);
+  //   }
+  // }, []);
+
+  // const contacts = useSelector(selectContacts);
+  // const [isOpen, setIsOpen] = useState(contacts.length === 0 ? false : true);
 
   const toggleTheme = () => {
     setIsDarkTheme((prevIsDarkTheme) => !prevIsDarkTheme);
@@ -97,7 +122,7 @@ export default function App() {
                 {contacts.length !== 0 && (
                   <AppContactsDiv>
                     <AppTitleH2>Contacts</AppTitleH2>
-                    <Filter contacts={contacts} />
+                    <Filter />
                     <ContactsList />
                   </AppContactsDiv>
                 )}
@@ -105,6 +130,7 @@ export default function App() {
             )}
           </AppDiv>
         </AppWrapper>
+        {/* {isLoading && <Loader />} */}
       </AppContainer>
       <ToastContainer />
     </ThemeProvider>

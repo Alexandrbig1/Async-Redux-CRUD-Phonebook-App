@@ -21,22 +21,20 @@ export default function FormSubmit() {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
 
-  const [contact, setContact] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
 
   function handleSubmit(values) {
     const newValue = { ...values, id: nanoid() };
 
-    if (!newValue.contact || !newValue.phoneNumber) {
+    if (!newValue.name || !newValue.phone) {
       return;
     }
 
-    const contactExist = contacts.some(
-      (item) => item.contact === newValue.contact
-    );
+    const contactExist = contacts.some((item) => item.name === newValue.name);
 
     if (contactExist) {
-      toast.info(`${newValue.contact} is already in contacts.`, {
+      toast.info(`${newValue.name} is already in contacts.`, {
         position: "top-right",
         autoClose: 5000,
         hideProgressBar: false,
@@ -47,7 +45,7 @@ export default function FormSubmit() {
         theme: "light",
       });
     } else {
-      toast.success(`${newValue.contact} added to your contacts.`, {
+      toast.success(`${newValue.name} added to your contacts.`, {
         position: "top-right",
         autoClose: 3000,
         hideProgressBar: false,
@@ -61,16 +59,16 @@ export default function FormSubmit() {
       // dispatch(addContact(values.target.elements.text.value));
     }
 
-    setContact("");
-    setPhoneNumber("");
+    setName("");
+    setPhone("");
   }
 
   const formSchema = Yup.object({
-    contact: Yup.string()
+    name: Yup.string()
       .min(1, "Too Short Name!")
       .max(50, "Too Long Name!")
       .required("Please write a name!"),
-    phoneNumber: Yup.string()
+    phone: Yup.string()
       .min(9, "Invalid Phone Number")
       .required("Please fill up the phone number!"),
   });
@@ -78,41 +76,37 @@ export default function FormSubmit() {
   return (
     <Formik
       initialValues={{
-        contact: contact,
-        phoneNumber: phoneNumber,
+        name: name,
+        phone: phone,
       }}
       validationSchema={formSchema}
       onSubmit={(values, actions) => {
         handleSubmit(values);
         actions.resetForm({
           values: {
-            contact: contact,
-            phoneNumber: phoneNumber,
+            name: name,
+            phone: phone,
           },
         });
       }}
     >
       <FormStyled className="contact-form">
-        <FormLabel htmlFor="contact">Name</FormLabel>
+        <FormLabel htmlFor="name">Name</FormLabel>
         <FormInputWrapper>
           <FormHiUser />
-          <FormField type="text" name="contact" placeholder="John Doe" />
+          <FormField type="text" name="name" placeholder="John Doe" />
         </FormInputWrapper>
 
-        <FormError component="span" name="contact" />
+        <FormError component="span" name="name" />
 
-        <FormLabel htmlFor="phoneNumber">Number</FormLabel>
+        <FormLabel htmlFor="phone">Number</FormLabel>
 
         <FormInputWrapper>
           <FormHiPhone />
-          <FormField
-            type="number"
-            name="phoneNumber"
-            placeholder="123 45 6789"
-          />
+          <FormField type="number" name="phone" placeholder="123 45 6789" />
         </FormInputWrapper>
 
-        <FormError component="span" name="phoneNumber" />
+        <FormError component="span" name="phone" />
 
         <FormContactBtn type="submit">Add contact</FormContactBtn>
       </FormStyled>
