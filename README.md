@@ -2,7 +2,6 @@
 <img align="right" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="100"/>
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/Alexandrbig1/goit-react-hw-07-phonebook)](https://github.com/Alexandrbig1/goit-react-hw-07-phonebook/commits/main)
-[![GitHub license](https://img.shields.io/github/license/Alexandrbig1/goit-react-hw-07-phonebook)](https://github.com/Alexandrbig1/goit-react-hw-07-phonebook/blob/main/LICENSE)
 
 ## Description
 
