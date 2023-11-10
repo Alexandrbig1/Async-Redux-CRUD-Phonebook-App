@@ -1,7 +1,8 @@
-# **Phonebook** with Redux and Redux API
+# **Async Redux Phonebook App**
 <img align="right" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="100"/>
 
-# Async Redux CRUD App
+[![GitHub last commit](https://img.shields.io/github/last-commit/Alexandrbig1/goit-react-hw-07-phonebook)](https://github.com/Alexandrbig1/goit-react-hw-07-phonebook/commits/main)
+[![GitHub license](https://img.shields.io/github/license/Alexandrbig1/goit-react-hw-07-phonebook)](https://github.com/Alexandrbig1/goit-react-hw-07-phonebook/blob/main/LICENSE)
 
 ## Description
 
@@ -9,17 +10,26 @@ The Async Redux CRUD App is a React application that showcases asynchronous data
 
 ## Key Features and Technologies Used:
 
-- View a list of contacts from the API
-- Add new contacts
-- Delete contacts
-- Filtering existing contacts
-- Asynchronous data fetching and updating
+- Front-End Framework: React
+- Styling: Styled Components
 - Axios for making API requests
 - Data provided by mockapi.io
+- API Integration:
+  - View a list of contacts from the API
+  - Add new contacts
+  - Delete contacts
+  - Filter existing contacts
+  - Asynchronous data fetching and updating
 - Data persistence with Redux Toolkit
 - State management with Redux Toolkit
-- React
-- Styling by Styled Components
+
+## Issues
+
+If you encounter any issues or have suggestions, please [open an issue](https://github.com/Alexandrbig1/goit-react-hw-07-phonebook/issues).
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
 
 ## Languages and Tools:
 <div align="center">  
