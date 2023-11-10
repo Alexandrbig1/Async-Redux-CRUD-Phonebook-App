@@ -31,6 +31,12 @@ If you encounter any issues or have suggestions, please [open an issue](https://
 
 This project is licensed under the [MIT License](LICENSE).
 
+## Acknowledgments
+
+A special thanks to the following for their contributions to this project:
+
+- [mockapi.io](https://www.mockapi.io/): A versatile and convenient backend service for providing mock data. This project wouldn't be possible without the support and features offered by mockapi.io.
+
 ## Languages and Tools:
 <div align="center">  
  
