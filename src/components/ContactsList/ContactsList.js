@@ -34,8 +34,6 @@ export default function ContactsList() {
     return filtered;
   }
 
-  // function sortedContacts() {}
-
   const visibleContacts = filteredByContact();
 
   return (

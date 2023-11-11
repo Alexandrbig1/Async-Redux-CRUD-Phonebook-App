@@ -6,9 +6,11 @@ import ThemeButton from "./ThemeButton/ThemeButton";
 import { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./GlobalStyle";
 import { useDispatch, useSelector } from "react-redux";
-import { selectContacts, selectIsLoading } from "../redux/selectors";
+import { selectContacts } from "../redux/selectors";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loader from "./Loader/Loader";
+import { fetchContacts } from "../redux/operations";
 import {
   AppDiv,
   AppTitleH1,
@@ -22,8 +24,6 @@ import {
   AppButtonOpen,
   AppButtonClose,
 } from "./AppButton/AppButton";
-import { fetchContacts } from "../redux/operations";
-// import Loader from "./Loader/Loader";
 
 const theme = {
   light: {
@@ -61,11 +61,10 @@ const theme = {
 };
 
 export default function App() {
-  // localStorage.getItem("theme");
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const [isOpen, setIsOpen] = useState(false);
-  // const isLoading = useSelector(selectIsLoading);
+  const [initialLoading, setInitialLoading] = useState(true);
   const [isDarkTheme, setIsDarkTheme] = useState(() => {
     const savedTheme = localStorage.getItem("theme");
     return savedTheme === "light" ? false : true;
@@ -77,6 +76,9 @@ export default function App() {
         .unwrap()
         .catch((error) => {
           console.error("Error fetching contacts:", error);
+        })
+        .finally(() => {
+          setInitialLoading(false);
         });
     } catch (error) {}
   }, [dispatch]);
@@ -93,31 +95,33 @@ export default function App() {
   return (
     <ThemeProvider theme={isDarkTheme ? theme.dark : theme.light}>
       <GlobalStyle />
-      <AppContainer>
-        <ThemeButton toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
-        <AppWrapper open={isOpen}>
-          <AppButton onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <AppButtonClose /> : <AppButtonOpen />}
-          </AppButton>
-          <AppDiv>
-            {isOpen && (
-              <>
-                <AppTitleH1>Phonebook</AppTitleH1>
-                <FormSubmit />
-                {contacts.length !== 0 && (
-                  <AppContactsDiv>
-                    <AppTitleH2>Contacts</AppTitleH2>
-                    <Filter />
-                    <ContactsList />
-                  </AppContactsDiv>
-                )}
-              </>
-            )}
-          </AppDiv>
-        </AppWrapper>
-        {/* {isLoading && <Loader />} */}
-        {/* {isLoading && <div>Loading</div>} */}
-      </AppContainer>
+      {initialLoading ? (
+        <Loader />
+      ) : (
+        <AppContainer>
+          <ThemeButton toggleTheme={toggleTheme} isDarkTheme={isDarkTheme} />
+          <AppWrapper open={isOpen}>
+            <AppButton onClick={() => setIsOpen(!isOpen)}>
+              {isOpen ? <AppButtonClose /> : <AppButtonOpen />}
+            </AppButton>
+            <AppDiv>
+              {isOpen && (
+                <>
+                  <AppTitleH1>Phonebook</AppTitleH1>
+                  <FormSubmit />
+                  {contacts.length !== 0 && (
+                    <AppContactsDiv>
+                      <AppTitleH2>Contacts</AppTitleH2>
+                      <Filter />
+                      <ContactsList />
+                    </AppContactsDiv>
+                  )}
+                </>
+              )}
+            </AppDiv>
+          </AppWrapper>
+        </AppContainer>
+      )}
       <ToastContainer />
     </ThemeProvider>
   );
