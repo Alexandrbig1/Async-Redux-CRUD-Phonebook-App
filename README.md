@@ -1,4 +1,5 @@
 # **Async Redux CRUD Phonebook App**
+
 <img align="right" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" width="100"/>
 
 [![GitHub last commit](https://img.shields.io/github/last-commit/Alexandrbig1/goit-react-hw-07-phonebook)](https://github.com/Alexandrbig1/goit-react-hw-07-phonebook/commits/main)
@@ -23,6 +24,16 @@ The Async Redux CRUD App is a React application that showcases asynchronous data
 - Data persistence with Redux Toolkit
 - State management with Redux Toolkit
 
+## Project Preview
+
+### Screenshots
+
+![Async Redux CRUD Phonebook App](./public/images/project-img1.jpg)
+_Caption for Screenshot 1_
+
+![Async Redux CRUD Phonebook App](./public/images/project-img2.jpg)
+_Caption for Screenshot 2_
+
 ## Issues
 
 If you encounter any issues or have suggestions, please [open an issue](https://github.com/Alexandrbig1/goit-react-hw-07-phonebook/issues).
@@ -38,6 +49,7 @@ A special thanks to the following for their contributions to this project:
 - [mockapi.io](https://www.mockapi.io/): A versatile and convenient backend service for providing mock data. This project wouldn't be possible without the support and features offered by mockapi.io.
 
 ## Languages and Tools:
+
 <div align="center">  
  
 <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/html5-original-wordmark.svg" alt="HTML5" height="50" /></a>
@@ -49,7 +61,8 @@ A special thanks to the following for their contributions to this project:
 <a href="https://styled-components.com/" target="_blank"><img style="margin: 10px" src="https://profilinator.rishav.dev/skills-assets/styled-components.png" alt="Styled Components" height="50" /></a>
 </div>
 
-## Connect with me:  
+## Connect with me:
+
 <div align="center">
 <a href="https://linkedin.com/in/alex-smagin29" target="_blank">
 <img src=https://img.shields.io/badge/linkedin-%231E77B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white alt=linkedin style="margin-bottom: 5px;" />
@@ -66,4 +79,4 @@ A special thanks to the following for their contributions to this project:
 <a href="https://www.behance.net/a1126" target="_blank">
 <img src=https://img.shields.io/badge/behance-%23191919.svg?&style=for-the-badge&logo=behance&logoColor=white alt=behance style="margin-bottom: 5px;" />
 </a>  
-</div> 
+</div>
