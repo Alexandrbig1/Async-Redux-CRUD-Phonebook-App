@@ -11,9 +11,9 @@ The Async Redux CRUD App is a React application that showcases asynchronous data
 
 ## Key Features and Technologies Used:
 
-- Front-End Framework: React
-- Styling: Styled Components
-- Axios for making API requests
+- Front-End Framework: ![Alt text](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black)
+- Styling: ![Alt text](https://img.shields.io/badge/styledcomponents-DB7093.svg?style=for-the-badge&logo=styled-components&logoColor=white)
+- ![Alt text](https://img.shields.io/badge/Axios-5A29E4.svg?style=for-the-badge&logo=Axios&logoColor=white) for making API requests
 - Data provided by mockapi.io
 - API Integration:
   - View a list of contacts from the API
@@ -21,8 +21,8 @@ The Async Redux CRUD App is a React application that showcases asynchronous data
   - Delete contacts
   - Filter existing contacts
   - Asynchronous data fetching and updating
-- Data persistence with Redux Toolkit
-- State management with Redux Toolkit
+- Data persistence with ![Alt text](https://img.shields.io/badge/Redux-764ABC.svg?style=for-the-badge&logo=Redux&logoColor=white) Toolkit
+- State management with ![Alt text](https://img.shields.io/badge/Redux-764ABC.svg?style=for-the-badge&logo=Redux&logoColor=white) Toolkit
 
 ## Project Preview
 
