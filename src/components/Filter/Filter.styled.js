@@ -8,10 +8,6 @@ export const FilterDiv = styled.div`
   gap: 4px;
 `;
 
-export const FilterInputWrapper = styled.div`
-  width: 100%;
-`;
-
 export const FilterInput = styled.input`
   padding: 12px 24px;
   outline: none;
@@ -51,7 +47,6 @@ export const FilterLabel = styled.label`
   font-weight: 400;
   line-height: 1.28;
   position: relative;
-  /* background-color: red; */
 `;
 
 export const FilterSearchIcon = styled(LuSearch)`

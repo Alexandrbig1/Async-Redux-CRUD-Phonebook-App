@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Menu = styled.ul`
-  /* margin-top: 1.2rem; */
   display: flex;
   flex-direction: column;
   gap: 0.1rem;

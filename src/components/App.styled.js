@@ -41,14 +41,12 @@ export const AppContainer = styled.div`
   gap: 24px;
   width: 800px;
   min-height: 660px;
-  /* padding: 2.4rem; */
   background-color: ${(p) => p.theme.colors.containerColor};
   box-shadow: 15px 15px 50px 40px ${(p) => p.theme.colors.boxShadow},
     -15px -15px 50px 40px ${(p) => p.theme.colors.boxShadow};
 
   margin: 0 auto;
   border-radius: 12px;
-  /* background: linear-gradient(to left, #fdedfc, #fafee3); */
   position: relative;
 `;
 

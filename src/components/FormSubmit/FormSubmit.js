@@ -56,7 +56,6 @@ export default function FormSubmit() {
         theme: "light",
       });
       dispatch(addContact(newValue));
-      // dispatch(addContact(values.target.elements.text.value));
     }
 
     setName("");

@@ -20,7 +20,6 @@ export default function Filter() {
     <FilterDiv>
       <FilterLabel htmlFor="search">
         Find contacts by name:
-        {/* <FilterInputWrapper> */}
         <FilterInput
           type="text"
           name="search"
@@ -32,7 +31,6 @@ export default function Filter() {
         />
         <FilterSearchIcon />
       </FilterLabel>
-      {/* </FilterInputWrapper> */}
     </FilterDiv>
   );
 }

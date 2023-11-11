@@ -39,6 +39,7 @@ const theme = {
       boxShadow: "rgba(255, 255, 255, 0.5)",
       switcherBg: "#ced4da",
       inputBg: "#f8f9fa",
+      modalBg: "#6c757d",
     },
   },
   dark: {
@@ -54,21 +55,23 @@ const theme = {
       boxShadow: "none",
       switcherBg: "#1E1E1E",
       inputBg: "#050505",
+      modalBg: "#1E1E1E",
     },
   },
 };
 
 export default function App() {
+  // localStorage.getItem("theme");
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const [isOpen, setIsOpen] = useState(false);
   // const isLoading = useSelector(selectIsLoading);
-  const [isDarkTheme, setIsDarkTheme] = useState(
-    contacts.length === 0 ? false : true
-  );
+  const [isDarkTheme, setIsDarkTheme] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme === "light" ? false : true;
+  });
 
   useEffect(() => {
-    // Dispatch fetchContacts thunk
     try {
       dispatch(fetchContacts())
         .unwrap()
@@ -79,30 +82,12 @@ export default function App() {
   }, [dispatch]);
 
   useEffect(() => {
-    // Set isOpen once the data is available
     setIsOpen(contacts.length > 0);
   }, [contacts]);
 
-  // useEffect(() => {
-  //   // Dispatch fetchContacts thunk
-
-  //   try {
-  //     dispatch(fetchContacts())
-  //       .unwrap()
-  //       .catch((error) => {
-  //         console.error("Error fetching contacts:", error);
-  //       });
-  //   } catch (error) {
-  //   } finally {
-  //     setIsOpen(contacts.length > 0 ? true : false);
-  //   }
-  // }, []);
-
-  // const contacts = useSelector(selectContacts);
-  // const [isOpen, setIsOpen] = useState(contacts.length === 0 ? false : true);
-
   const toggleTheme = () => {
     setIsDarkTheme((prevIsDarkTheme) => !prevIsDarkTheme);
+    localStorage.setItem("theme", isDarkTheme ? "light" : "dark");
   };
 
   return (
@@ -131,6 +116,7 @@ export default function App() {
           </AppDiv>
         </AppWrapper>
         {/* {isLoading && <Loader />} */}
+        {/* {isLoading && <div>Loading</div>} */}
       </AppContainer>
       <ToastContainer />
     </ThemeProvider>
