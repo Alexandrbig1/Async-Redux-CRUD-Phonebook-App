@@ -36,7 +36,7 @@ _Caption for Screenshot 2_
 
 ## Issues
 
-If you encounter any issues or have suggestions, please [open an issue](https://github.com/Alexandrbig1/goit-react-hw-07-phonebook/issues).
+If you encounter any issues or have suggestions, please [open an issue](https://github.com/Alexandrbig1/Async-Redux-CRUD-Phonebook-App/issues).
 
 ## License
 
